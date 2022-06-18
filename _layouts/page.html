@@ -1,5 +1,23 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-{{ content }}
+<article class="front">
+    <header>
+      <div class="row center-xs">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 align-left">
+          <h1>
+            {{ page.page_title }}
+          </h1>
+        </div>
+        <div class="row lead center-xs">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 align-left">
+              {{ content }}
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 align-center">
+          </div>
+        </div>
+      </div>
+    </header>
+  </article>
+  
+  {% endblock %}

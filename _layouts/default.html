@@ -1,12 +1,97 @@
 ---
-layout: base
+layout: compress
 ---
-<header>
-  {% include header.html -%}
-</header>
-<section role="main">
-  {{ content }}
-</section>
-<footer>
-  {% include footer.html -%}
-</footer>
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <meta name="robots" content="{% if page.robots %}{{ page.robots }}{% else: %}{{ 'index,follow,archive' }}{% endif %}" />
+
+    <meta name="google-site-verification" content="{{ google_site_verification }}" />
+
+    <meta name="author" content="{{ page.page_author }}" />
+    <meta name="description" content="{{ page.page_description }}" />
+
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="{{ page.title }}" />
+    <meta property="twitter:url" content="{{ page.permalink }}" />
+    <meta property="twitter:image" content="{{ page.page_image }}" />
+
+    <meta name="author" content="{{ page.page_author }}" />
+    <meta name="description" content="{{ page.page_description }}" />
+
+    <meta property="og:site_name" content="{{ site_name }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ page.path }}" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:image" content="{{ page.page_image }}" />
+
+    <meta name="dcterms.type" content="Text" />
+    <meta name="dcterms.identifier" content="{{ page.path }}" />
+    <meta name="dcterms.format" content="text/html" />
+    <meta name="dcterms.title" content="{{ page.title }}" />
+    <meta property="dcterms.image" content="{{ page.page_image }}" />
+
+    <meta name="theme-color" content="#0123e1"/>
+
+    <base href="/" />
+
+    <title>{{ page.title | safe }}</title>
+    
+    <link href="/assets/styles/main.css" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/favicon.png" type="image/x-icon" rel="icon" />
+    <link href="/assets/favicon.png" type="image/x-icon" rel="shortcut icon" />
+    <link rel="apple-touch-icon" href="/assets/favicon.png" />
+
+  </head>
+
+  <body class="{{ page.page_class }}">
+
+    <!--Site Header-->
+    {% if page.path != 'index' %}
+    <div class="container-fluid">
+      <header class="siteHeader">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="breadcrumbs">
+              {% for crumb in page.breadcrumbs: %}
+              <a href="{{ crumb.url }}" class="{{ crumb.class }}">
+                {{ crumb.title }}
+              </a> {% if not loop.last: %}<span class="separator">&raquo;</span> {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+    
+      </header>
+    </div>
+    {% endif %}
+        
+    <main class="container-fluid container-enter container-front">
+      {% block content %}{% endblock %}
+    </main>
+
+    <div class="container-fluid">
+      <footer class="siteFooter">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <p>
+              Copyright &copy; 2022 Joshua Powell, Pittsburgh, PA. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+  </body>
+
+</html>
