@@ -1,0 +1,36 @@
+/**
+ * main.scss
+ *
+ * @description
+ *    The typography stylesheet helps us define styles that handle the
+ *    appearance and positioning of the type used throughtout the site
+ *
+ * @overview
+ *    This stylesheet is written in SASS(1) and compiles all of the styles
+ *    we use throughout the site.
+ *
+ * @see (1) http: *sass-lang.com/documentation/file.SASS_REFERENCE.html
+ */
+
+ @import url('https://use.typekit.net/thr6vmy.css');
+
+ @import url("_animate") screen;
+ @import url("_content") screen;
+ @import url("_global") screen;
+ @import url("_layout") screen;
+ @import url("_table") screen;
+ @import url("_typography") screen;
+ 
+ :root {
+ 
+     --color--blue: #005ae4;
+     --color--black: #1B282F;
+     --color--gold: #FFB300;
+     --color--sienna: #FC6207;
+ 
+     --grid-container-margins: 0;
+     
+     --font--mono: monospace;
+     --font--sans: aktiv-grotesk, sans-serif;
+     --font--serif: times, serif;    
+ }
