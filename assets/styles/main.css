@@ -12,12 +12,12 @@
  * @see (1) http: *sass-lang.com/documentation/file.SASS_REFERENCE.html
  */
 @import url("https://use.typekit.net/thr6vmy.css");
-@import "_animate" screen;
-@import "_content" screen;
-@import "_global" screen;
-@import "_layout" screen;
-@import "_table" screen;
-@import "_typography" screen;
+@import url("_animate.css") screen;
+@import url("_content.css") screen;
+@import url("_global.css") screen;
+@import url("_layout.css") screen;
+@import url("_table.css") screen;
+@import url("_typography.css") screen;
 :root {
   --color--blue: #005ae4;
   --color--black: #1B282F;
@@ -27,5 +27,3 @@
   --font--mono: monospace;
   --font--sans: aktiv-grotesk, sans-serif;
   --font--serif: times, serif; }
-
-/*# sourceMappingURL=main.css.map */
